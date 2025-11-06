@@ -1,0 +1,15 @@
+[package]
+name = "flow-way"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Fernando H. Gavezzotti <https://github.com/fexh10>"]
+license = "MIT"
+description = "A simple Typst template for creating awesome notes and documents."
+keywords = ["notes", "report", "simple"]
+categories = ["report"]
+repository = "https://github.com/fexh10/flow-way"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
