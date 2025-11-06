@@ -1,4 +1,4 @@
-#import "@local/flow-way:0.1.0": *
+#import "../src/lib.typ": *
 
 #show: flow.with(
   title: "Flow-Way Template",
@@ -35,3 +35,12 @@ fn main() {
   println!("Hello, world!");
 }
 ```
+
+== Images
+
+Here is an example of an image included in the document:
+
+#figure(
+  image("../assets/rick-astley.jpg", width: 8cm),
+  caption: [Rickrolled]
+)<rickrolled>

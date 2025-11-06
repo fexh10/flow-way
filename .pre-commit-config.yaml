@@ -5,12 +5,12 @@ repos:
         name: Typst compile main.typ
         entry: >-
           bash -c '
-          OUTPUT=$(typst compile template/main.typ 2>&1);
+          OUTPUT=$(typst compile template/main.typ --root . 2>&1);
           echo "$OUTPUT";
           if echo "$OUTPUT" | grep -qE "(error|warning)"; then
             exit 1;
           fi;
-          typst compile template/main.typ;
+          typst compile template/main.typ --root .;
           git add template/main.pdf
           '
         language: system
