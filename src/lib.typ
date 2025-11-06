@@ -8,6 +8,7 @@
   lang: "en",
   toc: false,
   toc-depth: none,
+  breaks: false,
   main-color: "003F88",
   alpha: 60%,
   body,
@@ -41,7 +42,12 @@
     )
   }
   // headings
-  show heading.where(level:1): it => it + v(0.5em)
+  show heading.where(level:1): it => {
+    if breaks {
+      pagebreak(weak: true)
+    }
+    it + v(0.5em)
+  }
   show heading: set text(font: title-font, fill: primary-color)
   // links
   show link: it => underline(text(fill: primary-color, it))

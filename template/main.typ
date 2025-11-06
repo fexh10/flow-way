@@ -6,6 +6,7 @@
   author: "Fernando H. Gavezzotti",
   affiliation: "My Company",
   toc: true,
+  breaks: true,
   year: 2025
 )
 
