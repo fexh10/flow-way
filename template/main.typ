@@ -5,6 +5,7 @@
   subtitle: "A simple Typst template",
   author: "Fernando H. Gavezzotti",
   affiliation: "My Company",
+  toc: true,
   year: 2025
 )
 

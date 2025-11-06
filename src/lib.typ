@@ -5,6 +5,9 @@
   affiliation: none,
   year: none,
   logo: none,
+  lang: "en",
+  toc: false,
+  toc-depth: none,
   main-color: "003F88",
   alpha: 60%,
   body,
@@ -19,7 +22,7 @@
 
   // set up document styles
   set document(author: author, title: title)
-  set text(font: body-font, 12pt)
+  set text(font: body-font, 12pt, lang: lang)
   set heading(numbering: "1.")
   set enum(indent: 1em, numbering: n => [#text(fill: primary-color, numbering("1.", n))])
   set list(indent: 1em, marker: n => [#text(fill: primary-color, "•")])
@@ -103,5 +106,10 @@
       }
     }
   )
+
+  if toc {
+    outline(depth: toc-depth)
+  }
+
   body 
 }
