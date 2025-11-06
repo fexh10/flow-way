@@ -25,3 +25,13 @@ The lists are styled according to the main colour of the template, that you can 
 + First item
 + Second item
 + Third item
+
+== Code
+
+Here is an example of inline code: `let x = 10`. For code blocks:
+
+```rs
+fn main() {
+  println!("Hello, world!");
+}
+```

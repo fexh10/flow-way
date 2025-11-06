@@ -9,11 +9,15 @@
   alpha: 60%,
   body,
 ) = {
+  // fonts used
   let body-font = "Source Sans Pro"
   let title-font = "Barlow"
+  let code-font  = "CMU Typewriter Text"
+  //colors
   let primary-color = rgb(main-color)
   let secondary-color = color.mix(color.rgb(100%, 100%, 100%, alpha), primary-color, space:rgb)
 
+  // set up document styles
   set document(author: author, title: title)
   set text(font: body-font, 12pt)
   set heading(numbering: "1.")
@@ -21,8 +25,22 @@
   set list(indent: 1em, marker: n => [#text(fill: primary-color, "•")])
   set figure.caption(separator: [ --- ], position: bottom)
 
+  // inline code
+  show raw.where(block: false): set text(font: code-font)
+  // code blocks
+  show raw.where(block: true): it => {
+    block(
+      fill: luma(93%),
+      inset: 10pt,
+      radius: 4pt, 
+      width: 100%,
+      text(font: code-font, it)
+    )
+  }
+  // headings
   show heading.where(level:1): it => it + v(0.5em)
   show heading: set text(font: title-font, fill: primary-color)
+  // links
   show link: it => underline(text(fill: primary-color, it))
 
   if logo != none {
@@ -30,6 +48,7 @@
     place(top + right, logo)
   }
   
+  //cover
   place(top + left, dx: -200pt, dy: 80pt)[
     #rotate(-25deg)[
       #ellipse(width: 400pt, height: 300pt, fill: secondary-color.transparentize(88%))
