@@ -1,7 +1,7 @@
 #let flow(
   title: "",
   subtitle: none,
-  author: "",
+  authors: (),
   affiliation: none,
   year: none,
   logo: none,
@@ -22,7 +22,7 @@
   let secondary-color = color.mix(color.rgb(100%, 100%, 100%, alpha), primary-color, space:rgb)
 
   // set up document styles
-  set document(author: author, title: title)
+  set document(author: authors, title: title)
   set text(font: body-font, 12pt, lang: lang)
   set heading(numbering: "1.")
   set enum(indent: 1em, numbering: n => [#text(fill: primary-color, numbering("1.", n))])
@@ -89,9 +89,21 @@
   v(2fr)
 
   align(center)[
-      #if author != "" {strong(author); linebreak();}
-      #if affiliation != none {affiliation; linebreak();}
-      #if year != none {str(year); linebreak();}
+      #if type(authors) == array and authors.len() > 0 {
+        strong(authors.join(", "))
+        linebreak()
+      } else if type(authors) == str and authors != "" {
+        strong(authors)
+        linebreak()
+      }
+      #if affiliation != none {
+        affiliation;
+        linebreak()
+      }
+      #if year != none {
+        str(year);
+        linebreak();
+      }
     ]
 
   pagebreak()
@@ -112,10 +124,8 @@
       }
     }
   )
-
   if toc {
     outline(depth: toc-depth)
   }
-
   body 
 }

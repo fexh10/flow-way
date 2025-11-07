@@ -3,7 +3,7 @@
 #show: flow.with(
   title: "Flow-Way Template",
   subtitle: "A simple Typst template",
-  author: "Fernando H. Gavezzotti",
+  authors: ("Fernando H. Gavezzotti", "John Doe"),
   affiliation: "My Company",
   toc: true,
   breaks: true,
