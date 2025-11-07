@@ -46,3 +46,7 @@ Here is an example of an image included in the document:
   image("../assets/rick-astley.jpg", width: 8cm),
   caption: [Rickrolled]
 )<rickrolled>
+
+= That's it!
+
+#lorem(300)
