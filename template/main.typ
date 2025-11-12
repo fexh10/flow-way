@@ -43,9 +43,9 @@ fn main() {
 Here is an example of an image included in the document:
 
 #figure(
-  image("../assets/rick-astley.jpg", width: 8cm),
-  caption: [Rickrolled]
-)<rickrolled>
+  image("/assets/example.jpg", width: 8cm),
+  caption: [Mountains]
+)<example-image>
 
 = That's it!
 
