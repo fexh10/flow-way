@@ -1,4 +1,4 @@
-#import "../src/lib.typ": *
+#import "@preview/flow-way:0.1.0": *
 
 #show: flow.with(
   title: "Flow-Way Template",
