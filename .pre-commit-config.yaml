@@ -10,7 +10,7 @@ repos:
           if echo "$OUTPUT" | grep -qE "(error|warning)"; then
             exit 1;
           fi;
-          typst compile template/main.typ --root .;
+          typst compile template/main.typ;
           git add template/main.pdf
           '
         language: system

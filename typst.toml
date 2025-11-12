@@ -13,4 +13,4 @@ exclude = [".github", "scripts", ".typstignore", "Justfile", ".pre-commit-config
 [template]
 path = "template"
 entrypoint = "main.typ"
-thumbnail = "thumbnail.png"
+thumbnail = "assets/thumbnail.png"

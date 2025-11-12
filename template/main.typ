@@ -40,12 +40,16 @@ fn main() {
 
 == Images
 
-Here is an example of an image included in the document:
+Here is an example of a figure included in the document:
 
 #figure(
-  image("/assets/example.jpg", width: 8cm),
-  caption: [Mountains]
-)<example-image>
+  ```rs
+  fn main() {
+    println("Figure!");
+  }
+  ```,
+  caption: [Some code]
+)<example>
 
 = That's it!
 
