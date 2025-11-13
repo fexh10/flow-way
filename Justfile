@@ -25,3 +25,7 @@ uninstall: (remove "@local")
 
 # uninstalls the library from the "@preview" prefix (for pre-release testing)
 uninstall-preview: (remove "@preview")
+
+# install fonts to ~/.local/share/fonts
+install-fonts:
+  ./scripts/install-fonts

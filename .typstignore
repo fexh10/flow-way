@@ -9,5 +9,7 @@
 
 .github
 .pre-commit-config.yaml
+Justfile
 scripts
+fonts
 template/*.pdf

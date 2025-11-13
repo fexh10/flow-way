@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+FONTS_SRC_DIR="$SCRIPT_DIR/../fonts"
+FONTS_DEST_DIR="$HOME/.local/share/fonts"
+
+mkdir -p "$FONTS_DEST_DIR" > /dev/null 2>&1
+
+for font_dir in "$FONTS_SRC_DIR"/*/ ; do
+    if [ -d "$font_dir" ]; then
+        font_name=$(basename "$font_dir")
+        mkdir -p "$FONTS_DEST_DIR/$font_name" > /dev/null 2>&1
+        cp -r "$font_dir"* "$FONTS_DEST_DIR/$font_name/" > /dev/null 2>&1
+    fi
+done
+
+fc-cache -fv > /dev/null 2>&1
+
+echo "Fonts installed"
