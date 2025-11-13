@@ -1,17 +1,25 @@
 repos:
   - repo: local
     hooks:
-      - id: typst-compile
-        name: Typst compile main.typ
-        entry: >-
-          bash -c '
-          OUTPUT=$(typst compile template/main.typ --root . 2>&1);
-          echo "$OUTPUT";
-          if echo "$OUTPUT" | grep -qE "(error|warning)"; then
+      - id: typst-test
+        name: Run Typst tests
+        entry: bash -c '
+          TEST_OUTPUT=$(tt run --font-path fonts 2>&1);
+          echo "$TEST_OUTPUT";
+          if echo "$TEST_OUTPUT" | grep -qE "(error|warning)"; then
             exit 1;
-          fi;
-          typst compile template/main.typ;
-          git add template/main.pdf
-          '
+          fi; '
         language: system
         pass_filenames: false
+
+      - id: typst-compile
+        name: Compile main.typ only if modified
+        language: system
+        entry: bash -c '
+          COMPILE_OUTPUT=$(typst compile template/main.typ template/main.pdf 2>&1);
+          echo "$COMPILE_OUTPUT";
+          if echo "$COMPILE_OUTPUT" | grep -qE "(error|warning)"; then
+            exit 1;
+          fi; '
+        pass_filenames: false
+        files: ^template/main\.typ$

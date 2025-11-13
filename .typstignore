@@ -11,5 +11,6 @@
 .pre-commit-config.yaml
 Justfile
 scripts
+tests
 fonts
 template/*.pdf
