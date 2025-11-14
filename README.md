@@ -29,6 +29,8 @@ Alternatively, you can create a new Typst file and import Flow-Way manually:
 )
 ```
 
+You can view a compiled pdf example of the template [here](https://github.com/fexh10/flow-way/blob/main/template/main.pdf).
+
 ## Fonts
 
 This template uses the following open-source fonts:
