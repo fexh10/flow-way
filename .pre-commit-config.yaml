@@ -13,13 +13,15 @@ repos:
         pass_filenames: false
 
       - id: typst-compile
-        name: Compile main.typ only if modified
+        name: Compile main.typ
         language: system
         entry: bash -c '
-          COMPILE_OUTPUT=$(typst compile template/main.typ template/main.pdf 2>&1);
+          COMPILE_OUTPUT=$(typst compile template/main.typ 2>&1);
           echo "$COMPILE_OUTPUT";
           if echo "$COMPILE_OUTPUT" | grep -qE "(error|warning)"; then
             exit 1;
-          fi; '
+          fi;
+          git add template/main.pdf; '
+
         pass_filenames: false
-        files: ^template/main\.typ$
+        stages: [pre-commit]
