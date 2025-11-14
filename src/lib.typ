@@ -8,7 +8,7 @@
 /// 
 /// *Example Usage:*
 /// ```typst
-/// #import "@preview/flow-way:0.1.0: *"
+/// #import "@preview/flow-way:0.1.0": *
 /// 
 /// #show: flow.with(
 ///   title: "My Document Title",
