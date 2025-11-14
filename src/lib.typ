@@ -1,16 +1,66 @@
+/// Flow-Way Template
+/// 
+/// A simple Typst template for creating modern documents, reports or notes with a clean design.
+/// 
+/// This function sets up the document styles, including fonts, colors, headings, page layout and it is intended to be used with the `#show` statement.
+/// 
+/// #v(1cm)
+/// 
+/// *Example Usage:*
+/// ```typst
+/// #import "@preview/flow-way:0.1.0: *"
+/// 
+/// #show: flow.with(
+///   title: "My Document Title",
+///   subtitle: "An optional subtitle",
+///   authors: ("Author One", "Author Two"),
+///   affiliation: "My Company",
+///   year: 2025,
+///   logo: image("path/to/logo.png"),
+///   toc: true,
+///   breaks: true
+/// )
+/// ```
+/// 
+/// -> body
 #let flow(
+  /// The title of the document.
+  /// -> str
   title: "",
+  /// The subtitle of the document.
+  /// -> none | str
   subtitle: none,
+  /// The authors of the document.
+  /// -> str | array<str>
   authors: (),
+  /// The affiliation of the authors.
+  /// -> none | str
   affiliation: none,
+  /// The year of the document.
+  /// -> none | int
   year: none,
+  /// An optional logo to display on the cover page.
+  /// -> none | image
   logo: none,
+  /// The language of the document.
+  /// -> str
   lang: "en",
+  /// Whether to include a table of contents.
+  /// -> bool
   toc: false,
+  /// The depth of the table of contents.
+  /// -> none | int
   toc-depth: none,
+  /// Whether to insert a page break before each top-level heading.
+  /// -> bool
   breaks: false,
+  /// The main color of the template in hex format.
+  /// -> str
   main-color: "003F88",
-  alpha: 60%,
+  /// The alpha transparency for secondary elements (0% to 100%).
+  /// -> int | ratio
+  alpha: 60%, 
+  /// -> body
   body,
 ) = {
   // fonts used

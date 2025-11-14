@@ -12,5 +12,6 @@
 Justfile
 scripts
 tests
+docs
 fonts
 template/*.pdf

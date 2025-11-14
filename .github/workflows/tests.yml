@@ -15,8 +15,11 @@ jobs:
         typst-version:
           - typst: 0.14.0
             tytanic: 0.3.1
-
-    name: Test for ${{ matrix.typst-version.typst }} (Tytanic ${{ matrix.typst-version.tytanic }})
+            # the docs don't need to build with all versions supported by the package;
+            # the latest one is enough
+            doc: true
+    
+    name: Test for ${{ matrix.typst-version.typst }} (Tytanic ${{ matrix.typst-version.tytanic }}${{ matrix.typst-version.doc && ', with docs' }})
     runs-on: ubuntu-latest
 
     steps:
@@ -52,3 +55,6 @@ jobs:
             tests/**/out/*.png
             tests/**/ref/*.png
           retention-days: 5
+      - name: Build docs
+        if: ${{ matrix.typst-version.doc }}
+        run: just doc

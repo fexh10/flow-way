@@ -10,6 +10,10 @@ default:
 test *args:
   tt run {{ args }} --font-path fonts
 
+# build documentation
+doc:
+  typst compile docs/docs.typ --root .    
+
 # update test cases
 update *args:
   tt update {{ args }} --font-path fonts
@@ -37,3 +41,6 @@ uninstall-preview: (remove "@preview")
 # install fonts to ~/.local/share/fonts
 install-fonts:
   ./scripts/install-fonts
+
+# run ci suite
+ci: test doc

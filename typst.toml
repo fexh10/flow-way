@@ -8,7 +8,15 @@ description = "A simple Typst template for creating awesome notes and documents.
 keywords = ["notes", "report", "simple"]
 categories = ["report"]
 repository = "https://github.com/fexh10/flow-way"
-exclude = [".github", "scripts", ".typstignore", "Justfile", ".pre-commit-config.yaml", "fonts", "tests"]
+exclude = [
+    ".github", 
+    "scripts", 
+    ".typstignore", 
+    "Justfile", 
+    ".pre-commit-config.yaml",
+    "fonts",
+    "docs",
+    "tests"]
 
 [template]
 path = "template"
