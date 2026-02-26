@@ -76,7 +76,17 @@
 
   // set up document styles
   set document(author: authors, title: title)
-  set text(font: body-font, 12pt, lang: lang)
+  set text(font: body-font, 10pt, lang: lang)
+  show heading.where(level: 1): set text(size: 13pt)
+  show heading.where(level:2): it => {
+    set text(size: 11pt)
+    it + v(0.4em)
+  }
+  show heading.where(level: l => l >= 3): it => {
+    set text(size: 10pt)
+    it + v(0.35em) 
+  }
+
   set par(justify: justify)
   set heading(numbering: "1.")
   set enum(indent: 1em, numbering: n => [#text(fill: primary-color, numbering("1.", n))])
@@ -84,7 +94,7 @@
   set figure.caption(separator: [ --- ], position: bottom)
 
   // inline code
-  show raw.where(block: false): set text(font: code-font)
+  show raw.where(block: false): set text(font: code-font, size:10pt)
   // code blocks
   show raw.where(block: true): it => {
     block(
