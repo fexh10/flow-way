@@ -54,6 +54,9 @@
   /// Whether to insert a page break before each top-level heading.
   /// -> bool
   breaks: false,
+  ///Set justify for the document
+  /// ->bool
+  justify: false,
   /// The main color of the template in hex format.
   /// -> str
   main-color: "003F88",
@@ -74,6 +77,7 @@
   // set up document styles
   set document(author: authors, title: title)
   set text(font: body-font, 12pt, lang: lang)
+  set par(justify: justify)
   set heading(numbering: "1.")
   set enum(indent: 1em, numbering: n => [#text(fill: primary-color, numbering("1.", n))])
   set list(indent: 1em, marker: n => [#text(fill: primary-color, "•")])
