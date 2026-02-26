@@ -7,7 +7,7 @@ Flow-Way is a simple Typst template for creating modern documents, reports and n
 You can start using this template using the Typst CLI command:
 
 ```bash
-typst init @preview/flow-way:0.1.0    
+typst init @preview/flow-way:0.2.0    
 ```
 
 This will create a new Typst project with the Flow-Way template. You can then edit the `main.typ` file to customize your document.
@@ -15,7 +15,7 @@ This will create a new Typst project with the Flow-Way template. You can then ed
 Alternatively, you can create a new Typst file and import Flow-Way manually:
 
 ```typst
-#import "@preview/flow-way:0.1.0": *
+#import "@preview/flow-way:0.2.0": *
 
 #show: flow.with(
   title: "My Document Title",
@@ -29,7 +29,7 @@ Alternatively, you can create a new Typst file and import Flow-Way manually:
 )
 ```
 
-You can view a compiled pdf example of the template [here](https://github.com/fexh10/flow-way/blob/v0.1.0/template/main.pdf).
+You can view a compiled pdf example of the template [here](https://github.com/fexh10/flow-way/blob/v0.2.0/template/main.pdf).
 
 ## Fonts
 
@@ -39,11 +39,11 @@ This template uses the following open-source fonts:
 - **Barlow** for headings.
 - **CMU Typewriter Text** for inline code and code blocks.
 
-You can download them from [here](https://github.com/fexh10/flow-way/tree/v0.1.0/fonts).
+You can download them from [here](https://github.com/fexh10/flow-way/tree/v0.2.0/fonts).
 
 ## Documentation
 
-For detailed instructions on how to use and customize this template, please refer to the [official documentation](https://github.com/fexh10/flow-way/blob/v0.1.0/docs/docs.pdf).
+For detailed instructions on how to use and customize this template, please refer to the [official documentation](https://github.com/fexh10/flow-way/blob/v0.2.0/docs/docs.pdf).
 
 ## Contributing
 
