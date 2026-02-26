@@ -54,9 +54,12 @@
   /// Whether to insert a page break before each top-level heading.
   /// -> bool
   breaks: false,
-  ///Set justify for the document
-  /// ->bool
+  /// Set justify for the document.
+  /// -> bool
   justify: false,
+  /// Whether to include a header on each page.
+  /// -> bool
+  header: true,
   /// The main color of the template in hex format.
   /// -> str
   main-color: "003F88",
@@ -174,18 +177,22 @@
 
   set page(
     numbering: "1",
-    header: context {
-      let elems = query(
-        heading.where(level: 1)
-      )
-      let loc = here()
-      let filtered = elems.filter(h => h.location().page() <= loc.page())
-      let current = if filtered.len() > 0 { filtered.last() } else { none }
-      if current != none {
-        align(right, emph(current.body))
-        v(-0.7em) 
-        line(length: 100%, stroke: 0.5pt + black)
+    header: if header {
+      context {
+        let elems = query(
+          heading.where(level: 1)
+        )
+        let loc = here()
+        let filtered = elems.filter(h => h.location().page() <= loc.page())
+        let current = if filtered.len() > 0 { filtered.last() } else { none }
+        if current != none {
+          align(right, emph(current.body))
+          v(-0.7em) 
+          line(length: 100%, stroke: 0.5pt + black)
+        }
       }
+    } else {
+      none
     }
   )
   if toc {
